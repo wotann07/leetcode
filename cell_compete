@@ -1,0 +1,19 @@
+class CellCompete:
+
+    # TODO: Write tests
+    @staticmethod
+    def cell_compete(states, days):
+        # WRITE YOUR CODE HERE
+        if len(states) < 1:
+            raise Exception('Empty array')
+        elif len(states) is 1:
+            return 0
+        else:
+            new_state = states[:]
+            for n in range(days):
+                new_state[0] = 0 ^ states[1]
+                new_state[len(new_state) - 1] = 0 ^ states[len(states) - 2]
+                for i in range(1, len(states) - 1):
+                    new_state[i] = states[i - 1] ^ states[i + 1]
+                states = new_state[:]
+            return new_state
