@@ -1,6 +1,3 @@
-from operator import itemgetter
-
-
 class XNearestSteakHouses:
 
     @staticmethod
@@ -9,7 +6,4 @@ class XNearestSteakHouses:
 
     @staticmethod
     def get_x_nearest_steakhouses(all_locations: [], x: int):
-        for point in all_locations:
-            point.append(XNearestSteakHouses.__get_distance(point))
-
-        return list(map(lambda loc: loc[:2], list(sorted(all_locations, key=itemgetter(2)))[:x]))
+        return list(sorted(all_locations, key=lambda point: XNearestSteakHouses.__get_distance(point)))[:x]
