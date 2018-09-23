@@ -1,4 +1,5 @@
 import unittest
+
 from array_product_except_self import ArrayProductExceptSelf
 
 

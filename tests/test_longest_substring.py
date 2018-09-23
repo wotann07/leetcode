@@ -1,7 +1,10 @@
 from unittest import TestCase
+
 from longest_substring import LongestSubstring
 
 
+# noinspection SpellCheckingInspection,SpellCheckingInspection,SpellCheckingInspection,SpellCheckingInspection,
+# \SpellCheckingInspection,SpellCheckingInspection
 class TestLongestSubstring(TestCase):
     def test_get_length_of_longest_substring(self):
         self.assertEqual(4, LongestSubstring.get_length_of_longest_substring_hash('abcad'), 'Input "abcad"')
