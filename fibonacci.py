@@ -7,8 +7,8 @@ class Fibonacci:
             return fib_computed[n]
 
         if not fib_computed.get(n):
-            fib_computed[n] = Fibonacci._get_fibonacci_helper(n - 1, fib_computed) + Fibonacci._get_fibonacci_helper(
-                n - 2, fib_computed)
+            fib_computed[n] = Fibonacci._get_fibonacci_helper(n - 1, fib_computed) + \
+                              Fibonacci._get_fibonacci_helper(n - 2, fib_computed)
 
         return fib_computed[n]
 

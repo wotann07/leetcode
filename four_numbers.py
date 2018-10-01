@@ -1,6 +1,6 @@
 class FourNumbers:
     @staticmethod
-    def __get_n_number_sum(nums: [], target: int, n: int, result, results):
+    def _get_n_number_sum(nums: [], target: int, n: int, result, results):
         """
         :param nums: Assumes ordered array
         :param target: Target sum
@@ -32,11 +32,11 @@ class FourNumbers:
         else:  # reduce to n == 2
             for i in range(len(nums) - n + 1):
                 if i == 0 or (i > 0 and nums[i - 1] != nums[i]):
-                    FourNumbers.__get_n_number_sum(nums[i + 1:], target - nums[i], n - 1, result + [nums[i]], results)
+                    FourNumbers._get_n_number_sum(nums[i + 1:], target - nums[i], n - 1, result + [nums[i]], results)
 
     @staticmethod
     def get_four_number_sum(target: int, nums: []):
         nums.sort()
         results = []
-        FourNumbers.__get_n_number_sum(nums, target, 4, [], results)
+        FourNumbers._get_n_number_sum(nums, target, 4, [], results)
         return results
